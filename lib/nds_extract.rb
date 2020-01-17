@@ -18,5 +18,27 @@ def directors_totals(nds)
   #
   #
   # Be sure to return the result at the end!
-  nil
+
+  hash_to_return = {}
+counter = 0
+while counter < directors_database.length do
+  key = directors_database[counter][:name]
+  puts key
+
+  inner_counter = 0
+  value = 0
+  while inner_counter < directors_database[counter][:movies].length do
+    value += directors_database[counter][:movies][inner_counter][:worldwide_gross]
+     inner_counter += 1
+  end
+
+  puts value
+  counter += 1
+  hash_to_return[key] = value
 end
+
+hash_to_return
+  
+  
+end
+
