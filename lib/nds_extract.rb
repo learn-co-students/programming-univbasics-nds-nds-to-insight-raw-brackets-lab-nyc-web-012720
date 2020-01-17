@@ -18,5 +18,22 @@ def directors_totals(nds)
   #
   #
   # Be sure to return the result at the end!
+result = {}
+  names = []
+  count1 = 0
+  count2 = 0
+  while nds.length > count1
+   names << nds[count1][:name]
+   count1 += 1
+   total = 0
+   while nds[count1][movies].length > count2
+    total += nds[count1][movies][count2][:worldwide_gross]
+    count2 += 1
+  end
+  total_array << total
+  result[names[count1]] = total[count1]
+  end
+  
+  pp result
   nil
 end
